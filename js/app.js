@@ -87,7 +87,7 @@ Enemy.prototype.update = function(dt) {
         30 + player.y > this.y) {
             alert('You lost! You collided with an enemy.');
             player.x = 200;
-            player.y = 300;
+            player.y = 480;
         }
 };
 
