@@ -1,4 +1,4 @@
-// A Game object to help in soe gae fnctionality
+// A Game object to help in some game functionality
 class Game {
     constructor() {
         this.playerImage = 'images/char-boy.png';
