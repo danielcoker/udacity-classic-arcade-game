@@ -1,26 +1,18 @@
-// function to get cookie
-// getCookie script fro w3 schools
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-
-// A Game object to define some general game defautls
+// A Game object to help in soe gae fnctionality
 class Game {
     constructor() {
-        this.playerImage = getCookie('playerImage');
+        this.playerImage = 'images/char-boy.png';
+    }
+
+    // Assign the playerImage property to the image the user clicked
+    setPlayerImage(playerImage) {
+        this.playerImage = playerImage;
+        this.updatePlayerImage();
+    }
+
+    // update the sprite property of the player obect to current player image
+    updatePlayerImage() {
+        player.sprite = this.playerImage;
     }
 }
 
@@ -28,7 +20,7 @@ class Game {
 let game = new Game();
 
 // set cookie playerImage to default image
-document.cookie = "playerImage = images/char-boy.png";
+// document.cookie = "playerImage = images/char-boy.png";
 
 // Get playerImmages container
 const playerDivImages = document.querySelector('.playerImages');
@@ -38,19 +30,16 @@ playerDivImages.addEventListener('click', function(event) {
     let element = event.target;
     if (element.hasAttribute('src')) {
         const playerImage = element.getAttribute('src');
-        document.cookie = 'playerImage = ' + playerImage + '';
-        location.reload();
+        game.setPlayerImage(playerImage);
+
+        // Set clicked class to currently active player Image
+        const playerDivChildren = playerDivImages.children;
+        for (playerDivChild of playerDivChildren) {
+            playerDivChild.classList.remove('clicked');
+            element.classList.add('clicked');
+        }
     }
 });
-
-// Set clicked class to currently active player Image
-const playerDivChildren = playerDivImages.children;
-for (playerDivChild of playerDivChildren) {
-    playerDivChild.classList.remove('clicked');
-    if (playerDivChild.getAttribute('src') === game.playerImage) {
-        playerDivChild.classList.add('clicked');
-    }
-}
 
 // Enemies our player must avoid
 var Enemy = function(x, y, speed) {
