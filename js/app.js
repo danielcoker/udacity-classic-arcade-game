@@ -16,11 +16,11 @@ class Game {
     }
 }
 
+// Instatiate Modal object
+const modal = new Modal(document.querySelector('.modal-overlay'));
+
 // Instatiating the game object
 let game = new Game();
-
-// set cookie playerImage to default image
-// document.cookie = "playerImage = images/char-boy.png";
 
 // Get playerImmages container
 const playerDivImages = document.querySelector('.playerImages');

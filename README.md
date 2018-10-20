@@ -5,9 +5,24 @@ Students should use this [rubric](https://review.udacity.com/#!/projects/2696458
 
 For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
 
-The aim of the game is to move the player to the water without colliding with any enemy - the bug.
+## How to run the game
+To run this game locally, clone the project here:
+
+```
+git clone https://github.com/danielcoker/udacity-classic-arcade-game.git
+```
+
+Serve the application by running this command in the same directory as `index.html`:
+
+```
+python -m SimpleHTTPServer
+```
+
+Go to `0.0.0.0:8000` on your browser to test the game.
 
 ## How to Play
+The aim of the game is to move the player to the water without colliding with any enemy - the bug.
+
 - Choose the image you want yor player to be.
 - Use the up, down, left and right arrow to move the player.
 - Move the player to the water.

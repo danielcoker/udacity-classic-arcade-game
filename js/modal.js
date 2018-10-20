@@ -21,6 +21,3 @@ class Modal {
         this.overlay.classList.add('is-hidden');
     }
 }
-const modal = new Modal(document.querySelector('.modal-overlay'));
-// window.openModal = modal.open.bind(modal);
-// window.openModal();
