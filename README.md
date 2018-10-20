@@ -18,7 +18,7 @@ Serve the application by running this command in the same directory as `index.ht
 python -m SimpleHTTPServer
 ```
 
-Go to `0.0.0.0:8000` on your browser to test the game.
+Go to `0.0.0.0:8000` on your browser to run the game.
 
 ## How to Play
 The aim of the game is to move the player to the water without colliding with any enemy - the bug.
